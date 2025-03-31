@@ -116,6 +116,12 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${org.eclipse.jetty.jetty-maven-plugin.version}</version>
       </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.1</version>
+      </plugin>
     </plugins>
   </build>
 
@@ -487,8 +493,15 @@
         <artifactId>levigo-jbig2-imageio</artifactId>
         <version>${com.levigo.jbig2.levigo-jbig2-imageio.version}</version>
       </dependency>
-
     </dependencies>
   </dependencyManagement>
 
+  <!-- Stage -->
+  <distributionManagement>
+    <site>
+      <id>internal.repo</id>
+      <name>Temp Stage Repo</name>
+      <url>file:~/stage-repo</url>
+    </site>
+  </distributionManagement>
 </project>
